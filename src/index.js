@@ -12,5 +12,3 @@ render(
         <App />
     </Provider>, document.getElementById('root')
 )
-
-export default store;

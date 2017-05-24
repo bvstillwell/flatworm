@@ -11,7 +11,7 @@ export const AccountsDraw = ({accounts, onAccountClick}) => {
             const desc = account.code + ' - ' + account.descr;
             return (
                 <li className="list-group-item" key={account.code}>
-                    <a href="#blam" onClick={onAccountClick}>{desc}</a>
+                    <a href="#blam" onClick={() => onAccountClick(account.code)}>{desc}</a>
                 </li>
             );
         });
