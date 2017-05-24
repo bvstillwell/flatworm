@@ -1,8 +1,6 @@
 import { ADD_ACCOUNT, SELECT_ACCOUNT } from './actions.js'
+import {initialState} from './initialise.js';
 
-const initialState = {
-    accounts: []
-};
 
 export const accounts = (state=initialState, action) => {
     console.log("REDUCE", state, action)

@@ -1,8 +1,13 @@
-import {ADD_ACCOUNT} from './actions.js'
+export const initialState = {
+    organisation: "Someone's flower shop",
 
-const initialise = (store) => {
-    store.dispatch({type: ADD_ACCOUNT, code: 123, descr: "one two three"});
-    store.dispatch({type: ADD_ACCOUNT, code: 456, descr: "four five six"});
-}
+    address: `123 Smith Road"
+Canberra Flats
+Canberra 6043
+Australia`,
 
-export default initialise;
+    accounts: [
+        {code: 123, descr: "one two three"},
+        {code: 456, descr: "four five six"}    
+    ]
+};
