@@ -15,4 +15,12 @@ export const selectAccount = code => {
     type: SELECT_ACCOUNT,
     code
   }
-}
+};
+
+export const INIT_ORGS='INIT_ORGS';
+export const initOrgs = orgs => {
+  return {
+    type: INIT_ORGS,
+    orgs
+  }
+};

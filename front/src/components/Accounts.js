@@ -3,15 +3,17 @@ import {connect} from 'react-redux'
 import {Panel} from 'react-bootstrap'
 
 import {selectAccount} from '../redux/actions.js'
+import {EditableLabel} from './EditableLabel.js'
 
 
 
-export const AccountsDraw = ({accounts, onAccountClick}) => {
+export const AccountsDraw = ({orgId, accounts, onAccountClick}) => {
+    console.log(accounts)
     const render = accounts.map((account, step) => {
-            const desc = account.code + ' - ' + account.descr;
+        console.log("ACCOUNT", account);
             return (
                 <li className="list-group-item" key={account.code}>
-                    <a href="#blam" onClick={() => onAccountClick(account.code)}>{desc}</a>
+                    <a href="#blam" onClick={() => onAccountClick(account.code)}>{account.code}</a> - <EditableLabel submit={console.log} text={account.name} />
                 </li>
             );
         });
@@ -22,10 +24,8 @@ export const AccountsDraw = ({accounts, onAccountClick}) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        accounts: state.accounts
-    }
+const mapStateToProps = (state, ownProps) => {
+    return ownProps
 }
 
 const mapDispatchToProps = (dispatch) => {
